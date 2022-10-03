@@ -210,18 +210,17 @@ void update7SEG(int index){
 }
 
 void updateClockBuffer(int hour, int minute){
-	//hour
 	if(hour<10){
 		led_buffer[0]=0;
 		led_buffer[1]=hour;
 	}else if(hour>=10){
 		led_buffer[0]=hour/10;
-		led_buffer[1]=hour%10;
+		led_buffer[0]=hour%10;
 	}else{
 		led_buffer[0]=9;
 		led_buffer[1]=9;
 	}
-	//minute
+
 	if(minute<10){
 		led_buffer[2]=0;
 		led_buffer[3]=minute;
@@ -272,7 +271,7 @@ HAL_TIM_Base_Start_IT(&htim2);
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 
-int hour = 15, minute = 16, second = 50;
+int hour = 15, minute = 8, second = 50;
   while (1)
   {
     /* USER CODE END WHILE */
@@ -290,7 +289,7 @@ int hour = 15, minute = 16, second = 50;
 	  if(hour >=24){
 		  hour = 0;
 	  }
-	  updateClockBuffer(hour,minute);
+	  updateClockBuffer();
 	  HAL_Delay(1000);
   }
   /* USER CODE END 3 */
