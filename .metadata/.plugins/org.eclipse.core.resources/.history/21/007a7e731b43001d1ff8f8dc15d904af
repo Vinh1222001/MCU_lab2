@@ -387,6 +387,7 @@ int blinking_count = BLINKING_TIMER;
 void HAL_TIM_PeriodElapsedCallback ( TIM_HandleTypeDef * htim )
 {
 	//coundown to blink two leds
+
 	if(blinking_count<=0){
 		blinking_count=BLINKING_TIMER;
 		HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);

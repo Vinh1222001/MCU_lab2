@@ -387,6 +387,7 @@ int blinking_count = BLINKING_TIMER;
 void HAL_TIM_PeriodElapsedCallback ( TIM_HandleTypeDef * htim )
 {
 	//coundown to blink two leds
+
 	if(blinking_count<=0){
 		blinking_count=BLINKING_TIMER;
 		HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
@@ -395,10 +396,9 @@ void HAL_TIM_PeriodElapsedCallback ( TIM_HandleTypeDef * htim )
 	}
 
 	//countdown to switch status led7seg
-	update7SEG(index_led);
 	if(count <= 0){
 		//switch status
-		++index_led;
+		update7SEG(index_led++);
 		if(index_led>=MAX_LED){
 			index_led=0;
 		}
