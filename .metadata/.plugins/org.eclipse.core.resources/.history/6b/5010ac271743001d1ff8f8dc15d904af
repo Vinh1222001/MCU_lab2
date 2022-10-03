@@ -86,7 +86,6 @@ void Error_Handler(void);
 #define SEG6_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
 #define SWITCHING_TIMER 50
-#define BLINKING_TIMER 100
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

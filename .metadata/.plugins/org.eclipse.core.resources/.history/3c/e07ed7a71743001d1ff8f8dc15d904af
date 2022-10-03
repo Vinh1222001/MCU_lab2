@@ -346,7 +346,6 @@ void HAL_TIM_PeriodElapsedCallback ( TIM_HandleTypeDef * htim )
 
 	if(blinking_count<=0){
 		blinking_count=BLINKING_TIMER;
-		HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
 	}else{
 		blinking_count--;
 	}

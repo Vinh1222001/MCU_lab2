@@ -336,22 +336,11 @@ static void MX_GPIO_Init(void)
 //led7seg status
 int status[]={0,1,1,1};
 
-//timer for led7seg
+//timer
 int count = SWITCHING_TIMER;
-//timer for blinking led
-int blinking_count = BLINKING_TIMER;
 void HAL_TIM_PeriodElapsedCallback ( TIM_HandleTypeDef * htim )
 {
-	//coundown to blink two leds
-
-	if(blinking_count<=0){
-		blinking_count=BLINKING_TIMER;
-		HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
-	}else{
-		blinking_count--;
-	}
-
-	//countdown to switch status led7seg
+	//countdown timer
 	if(count <= 0){
 		//switch status
 		if(status[0]==0){
