@@ -271,19 +271,14 @@ HAL_TIM_Base_Start_IT(&htim2);
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-	//Set timer for Blinking Leds
+
 	setTimer1(100);
-	//Set timer for led7seg
 	setTimer2(25);
 	int hour = 15, minute = 16, second = 50;
   while (1)
   {
     /* USER CODE END WHILE */
-
-    /* USER CODE BEGIN 3 */
-	  //update clock
 	  if(timer1_flag==1){
-		  //blinking 2 leds every second
 		  HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
 		  setTimer1(100);
 		  second++;
@@ -300,11 +295,8 @@ HAL_TIM_Base_Start_IT(&htim2);
 		  }
 
 	  }
-	  //update led_buffer
 	  updateClockBuffer(hour,minute);
-	  //update 4 led7seg
 		update7SEG(index_led);
-		//scanning 4 leds
 	  if(timer2_flag==1){
 		  setTimer2(25);
 		  ++index_led;
@@ -313,6 +305,8 @@ HAL_TIM_Base_Start_IT(&htim2);
 			}
 
 	  }
+
+    /* USER CODE BEGIN 3 */
 
   }
   /* USER CODE END 3 */
