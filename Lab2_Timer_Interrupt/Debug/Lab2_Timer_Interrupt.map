@@ -2209,19 +2209,19 @@ LOAD v:/e-learning/mcu/lab/stm32cubeide/stm32cubeide_1.7.0/stm32cubeide/plugins/
  .text.updateClockBuffer
                 0x000000000800060c       0xc8 ./Core/Src/main.o
                 0x000000000800060c                updateClockBuffer
- .text.main     0x00000000080006d4       0xcc ./Core/Src/main.o
+ .text.main     0x00000000080006d4       0x90 ./Core/Src/main.o
                 0x00000000080006d4                main
  .text.SystemClock_Config
-                0x00000000080007a0       0x76 ./Core/Src/main.o
-                0x00000000080007a0                SystemClock_Config
- *fill*         0x0000000008000816        0x2 
+                0x0000000008000764       0x76 ./Core/Src/main.o
+                0x0000000008000764                SystemClock_Config
+ *fill*         0x00000000080007da        0x2 
  .text.MX_TIM2_Init
-                0x0000000008000818       0x98 ./Core/Src/main.o
+                0x00000000080007dc       0x98 ./Core/Src/main.o
  .text.MX_GPIO_Init
-                0x00000000080008b0       0xa8 ./Core/Src/main.o
+                0x0000000008000874       0xa8 ./Core/Src/main.o
  .text.HAL_TIM_PeriodElapsedCallback
-                0x0000000008000958       0x14 ./Core/Src/main.o
-                0x0000000008000958                HAL_TIM_PeriodElapsedCallback
+                0x000000000800091c       0x50 ./Core/Src/main.o
+                0x000000000800091c                HAL_TIM_PeriodElapsedCallback
  .text.Error_Handler
                 0x000000000800096c        0xa ./Core/Src/main.o
                 0x000000000800096c                Error_Handler
